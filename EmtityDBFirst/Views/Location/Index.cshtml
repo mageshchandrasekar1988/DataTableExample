@@ -19,11 +19,15 @@
     <script>
             $(document).ready(function () {
                 $('#tblEmployeeList').DataTable({
-                    pageLength : 2,
+                    "pageLength": 2,
+                    "processing": true,
+                    "ServerSide": true,
+                    "filter": false,
+                    "orderMulti":false,
                     "ajax": {
                         "url": '@Url.Action("GetData")',
-                        "type": "GET",
-                        
+                        "type": "POST",
+                        "dataType": "json"
 
                     },
                     "columns": [
